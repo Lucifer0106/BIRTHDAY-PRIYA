@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Priya!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ghibli-blue: #a8d8ea;
+            --ghibli-green: #aaabb8;
+            --gold: #d4af37;
+            --soft-pink: #ffc8dd;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fdfaf1;
+            overflow-x: hidden;
+        }
+
+        /* --- ENTRY GATE --- */
+        #entry-gate {
+            position: fixed;
+            inset: 0;
+            background: #0a192f;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .login-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--gold);
+        }
+
+        .login-box h2 { color: var(--gold); margin-bottom: 20px; }
+
+        input {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            text-align: center;
+            width: 250px;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content { opacity: 0; transition: 1s ease-in; }
+        .main-content.visible { opacity: 1; }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* --- SECTION 1: PRIYA BABA --- */
+        .priya-baba {
+            background: linear-gradient(to bottom, #e0f2f1, #ffffff);
+        }
+
+        .ghibli-frame {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .ghibli-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .traits {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .trait-tag {
+            background: var(--gold);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* --- SECTION 2: THE AUDI --- */
+        .audi-section {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .audi-frame {
+            max-width: 800px;
+            width: 90%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+        }
+
+        .audi-frame img { width: 100%; display: block; }
+
+        /* --- SECTION 3: WISHES --- */
+        .wishes {
+            background: var(--soft-pink);
+        }
+
+        h1.birthday-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #d81b60;
+            margin-bottom: 30px;
+        }
+
+        .quote-card {
+            background: white;
+            padding: 40px;
+            border-radius: 0 50px 0 50px;
+            max-width: 600px;
+            box-shadow: 15px 15px 0px rgba(0,0,0,0.05);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float { animation: float 3s ease-in-out infinite; }
+    </style>
+</head>
+<body>
+
+    <div id="entry-gate">
+        <div class="login-box">
+            <h2>Who is the Birthday Girl?</h2>
+            <input type="text" id="pass-input" placeholder="Type name here..." oninput="checkName()">
+            <p id="hint" style="color: white; margin-top: 15px; font-size: 0.8rem; opacity: 0.6;">Hint: Her name starts with P</p>
+        </div>
+    </div>
+
+    <div class="main-content" id="main-content">
+        
+        <section class="priya-baba">
+            <div class="ghibli-frame">
+                <img src="1000051242.png" alt="Priya Baba">
+            </div>
+            <h2 style="font-family: 'Dancing Script'; font-size: 3rem; color: #2d5a27;">Priya Baba</h2>
+            <p style="max-width: 500px; margin-top: 10px;">The legendary "Priya Baba" – A soul who finds peace in devotion and brilliance in books.</p>
+            <div class="traits">
+                <span class="trait-tag">🙏 Bhakt</span>
+                <span class="trait-tag">🧠 Intelligent</span>
+                <span class="trait-tag">📚 Studious</span>
+                <span class="trait-tag">😂 Funny</span>
+            </div>
+        </section>
+
+        <section class="audi-section">
+            <h2 style="margin-bottom: 30px; color: var(--gold);">Manifesting Big Dreams</h2>
+            <div class="audi-frame">
+                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=1000" alt="Boy and Girl in Audi">
+            </div>
+            <p style="margin-top: 20px; opacity: 0.8;">Brother and Sister: Conquering the world, one luxury ride at a time.</p>
+        </section>
+
+        <section class="wishes">
+            <h1 class="birthday-text float">Happy Birthday, Priya!</h1>
+            <div class="quote-card">
+                <p>"To my dearest sister, may your success be as boundless as the sky. As you celebrate another year, I wish you the strength to achieve every dream you hold, the wisdom to lead, and the laughter that keeps your spirit young. Your hard work will take you to heights you haven't even imagined yet. Keep shining, Priya!"</p>
+                <p style="margin-top: 20px; font-weight: bold; color: #d81b60;">— With Love, Your Brother</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function checkName() {
+            const val = document.getElementById('pass-input').value.toLowerCase();
+            const gate = document.getElementById('entry-gate');
+            const main = document.getElementById('main-content');
+
+            if (val === 'priya') {
+                // Show Alert
+                alert("Access Granted! Happy Birthday Priya Didi! 🎉");
+                
+                // Animate Gate Out
+                gate.style.transform = "translateY(-100%)";
+                
+                // Show Content
+                setTimeout(() => {
+                    main.classList.add('visible');
+                    gate.style.display = "none";
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
